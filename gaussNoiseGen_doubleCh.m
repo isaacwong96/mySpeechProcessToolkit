@@ -1,0 +1,12 @@
+[input, Fs] = audioread('test.wav');
+input1 = input(:,1);
+input2 = input(:,2);
+snr = -2;
+[output1, noise] = gaussNoiseGen(input1, snr);
+[output2, noise] = gaussNoiseGen(input2, snr);
+res = zeros(160001,2);
+res(:,1) = output1;
+res(:,2) = output2;
+audiowrite('output.wav', res, Fs);
+snr1 = calSNR_singleCh(input1, output1);
+snr2 = calSNR_singleCh(input2, output2);
