@@ -1,0 +1,12 @@
+[input,Fs] = audioread('F007_Ba_L1_BA.wav');
+res1 = input(1:10000);
+res2 = input(10001:20000);
+res1 = res1 * 5;
+res2 = res2 * 5;
+figure;
+subplot(211);
+plot(res1);
+subplot(212);
+plot(res2);
+audiowrite('myShow1.wav',res1,Fs);
+audiowrite('myShow2.wav',res2,Fs);

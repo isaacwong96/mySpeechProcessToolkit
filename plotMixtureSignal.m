@@ -1,17 +1,20 @@
 function plotMixtureSignal(stereoSamples, sampleRate)
     [numSamples, ~] = size(stereoSamples);
-    %sampleTimesInSeconds = 0:0.001:numSamples/sampleRate;
-    %maxValue = max(abs(stereoSamples))*1.1;
+
+    t = 1:size(stereoSamples, 1);
+    t = t ./ sampleRate;
     
     subplot(211);
-    %plot(sampleTimesInSeconds, stereoSamples(:,1));
-    plot(stereoSamples(:,1));
+    plot(t, stereoSamples(:,1));
     axis('tight');
-    %ylim((-1*maxValue, maxValue));
-    title('Left channel');
+    ylim([-0.1 0.1]);
+    xlabel('Time(s)','FontSize',8);
+    ylabel('Amplitude','FontSize',8);
+    %title('Left channel');
     subplot(212);
-    %plot(sampleTimesInSeconds, stereoSamples(:,2));
-    plot(stereoSamples(:,2));
+    plot(t,stereoSamples(:,2));
     axis('tight');
-    title('Right channel');
-    %ylim((-1*maxValue, maxValue));
+    %title('Right channel');
+    ylim([-0.1 0.1]);
+    xlabel('Time(s)','FontSize',8);
+    ylabel('Amplitude','FontSize',8);

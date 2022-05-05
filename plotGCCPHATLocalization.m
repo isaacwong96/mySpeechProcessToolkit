@@ -2,21 +2,22 @@ function plotGCCPHATLocalization(spectralCoherenceV, angularSpectrogram, meanAng
     maxTDOA = getMaxTDOA(microphoneSeparationInMetres);
     tdoasInSeconds = getTDOAsInSeconds(microphoneSeparationInMetres, numTDOAs);
     
-    figure;
-    subplot(121);
+    %figure;
+    subplot(221);
     rectifiedAngularSpectrogram = angularSpectrogram;
     %rectifiedAngularSpectrogram[rectifiedAngularSpectrogram < 0] = 0;
     imagesc( rectifiedAngularSpectrogram);
-    set(gca,'YDir','normal')%ÉèÖÃyÖáÊýÖµÎªÕý³£ÏÔÊ¾
-    %ylim([0,35]);%yÖá·¶Î§
-    colorbar;%É«±ê
+    set(gca,'YDir','normal')%ï¿½ï¿½ï¿½ï¿½yï¿½ï¿½ï¿½ï¿½ÖµÎªï¿½ï¿½ï¿½ï¿½Ê¾
+    %ylim([0,35]);%yï¿½á·¶Î§
+    colorbar;%É«ï¿½ï¿½
     colormap(flipud( gray(64) ));
-    ylabel('TDOA (s)');
-    xlabel('Time (s)');
-    title('GCC-PHAT Angular Spectrogram');
+    ylabel('TDOA','FontSize', 8);
+    xlabel('Time','FontSize', 8);
+    %title('GCC-PHAT Angular Spectrogram');
     
-    subplot(122);
-    plot(tdoasInSeconds, meanAngularSpectrum);
+    subplot(222);
+    plot(tdoasInSeconds, meanAngularSpectrum, 'k');
     axis('tight');
-    xlabel('TDOA (s)')
-    title('Mean GCC-PHAT Angular Spectrum')
+    xlabel('TDOA','FontSize', 8);
+    ylabel('Amplitude','FontSize', 8);
+    %title('Mean GCC-PHAT Angular Spectrum')

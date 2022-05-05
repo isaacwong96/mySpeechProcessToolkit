@@ -28,18 +28,18 @@ Y = fs*(0:rows-1)/((rows-1)*2); % frequency, index to Hz) (rows)
 
 handle = pcolor(X,Y,stftPlot_coefs);
 set(handle, 'EdgeColor', 'none');
-c_bound_lower = -160;
+c_bound_lower = -100;
 c_bound_higher = 0;
 caxis([c_bound_lower c_bound_higher]) 
 shading flat
 %colormap(hot)
 colormap(flipud(gray(256)));
 h = colorbar;
-ylabel(h, 'Energy, dB below 1', 'FontSize', 9)
-title(plot_title, 'FontSize', 9)
-xlabel('Time, s', 'FontSize', 9)
-ylabel('Frequency, Hz', 'FontSize', 9)
-set(gca,'fontsize', 9)
+ylabel(h, 'Energy, dB below 1', 'FontSize', 8)
+%title(plot_title, 'FontSize', 9)
+xlabel('Time(s)', 'FontSize', 8)
+ylabel('Frequency(Hz)', 'FontSize', 8)
+set(gca,'fontsize', 8)
 
 ax = gca;
 disp('========================================');

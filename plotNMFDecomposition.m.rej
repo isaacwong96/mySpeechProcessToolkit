@@ -1,0 +1,10 @@
+diff a/plotNMFDecomposition.m b/plotNMFDecomposition.m	(rejected hunks)
+@@ -21,7 +21,7 @@
+     imagesc(numFreq,dictionarySize,W.'.^wRootFactor);
+     set(gca,'YDir','normal')%����y����ֵΪ������ʾ
+     colorbar;
+-    colormap(flipud( gray(256) ));
++    colormap(parula);
+     title('Dictionary W');
+     ylabel('Atom index');
+     xlabel('Frequency (kHz)');
